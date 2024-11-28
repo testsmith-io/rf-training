@@ -20,6 +20,8 @@ jobs:
       run: |
         pip install --upgrade pip
         pip install -r requirements.txt
+    - name: Init browsers
+      run: rfbrowser init  
     - name: Run Test and create report
       run: python -m robot -d results -x junit-report.xml "tests"
       continue-on-error: true
